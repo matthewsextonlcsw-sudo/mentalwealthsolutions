@@ -1,9 +1,9 @@
 const RAVES_ITEMS = [
   {
     letter: "R",
-    title: "Resilience",
+    title: "Recognition",
     description:
-      "Building psychological durability that compounds over time. Not just bouncing back\u2014bouncing forward with greater capacity than before.",
+      "Seeing yourself and your circumstances with unflinching clarity. Recognition is the first act of wealth\u2014you cannot build on what you refuse to acknowledge.",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
@@ -12,9 +12,9 @@ const RAVES_ITEMS = [
   },
   {
     letter: "A",
-    title: "Awareness",
+    title: "Alignment",
     description:
-      "Deep self-knowledge as the foundation of all growth. Understanding your patterns, triggers, values, and blind spots with radical clarity.",
+      "Bringing your actions, values, and environment into congruence. When what you do matches who you are, mental wealth compounds instead of leaking.",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -24,9 +24,9 @@ const RAVES_ITEMS = [
   },
   {
     letter: "V",
-    title: "Vision",
+    title: "Value",
     description:
-      "Crafting a deliberate future instead of defaulting into one. Aligning daily choices with long-term psychological and emotional wealth.",
+      "Defining your worth on your own terms, not the world\u2019s. Value is the currency of mental wealth\u2014it determines what you invest in and what you walk away from.",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
@@ -35,9 +35,9 @@ const RAVES_ITEMS = [
   },
   {
     letter: "E",
-    title: "Empowerment",
+    title: "Evidence",
     description:
-      "Moving from passive survival to active authorship of your life. Owning your agency, decisions, and the narrative you live inside.",
+      "Grounding every decision in data, not just feelings. Evidence-based practice means your growth is measurable, repeatable, and built on proof\u2014not hope.",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -46,9 +46,9 @@ const RAVES_ITEMS = [
   },
   {
     letter: "S",
-    title: "Strategy",
+    title: "Sovereignty",
     description:
-      "Systematic approaches that turn insight into action. Evidence-based frameworks that make mental wealth building repeatable and measurable.",
+      "Owning the final authority over your mind, your narrative, and your path. Sovereignty is the endgame\u2014full authorship of a life you built on purpose.",
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
