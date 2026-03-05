@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "dev",
+      "runtimeExecutable": "/Users/matthewsexton/Desktop/mentalwealthsolutions/node_modules/.bin/next",
+      "runtimeArgs": ["dev", "--dir", "/Users/matthewsexton/Desktop/mentalwealthsolutions"],
+      "port": 3001
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { compileMDX } from "next-mdx-remote/rsc";
 import { getPostBySlug, getAllSlugs } from "@/lib/blog";
 import { GoldDivider } from "@/components/ui/GoldDivider";
+import { PostContent } from "./PostContent";
 
 interface PostPageProps {
   params: { slug: string };
@@ -30,13 +30,9 @@ export function generateMetadata({ params }: PostPageProps): Metadata {
   };
 }
 
-export default async function PostPage({ params }: PostPageProps) {
+export default function PostPage({ params }: PostPageProps) {
   const post = getPostBySlug(params.slug);
   if (!post) notFound();
-
-  const { content: mdxContent } = await compileMDX({
-    source: post.content,
-  });
 
   return (
     <article className="min-h-screen pt-28 pb-20">
@@ -103,9 +99,9 @@ export default async function PostPage({ params }: PostPageProps) {
 
       <GoldDivider />
 
-      {/* MDX Content */}
+      {/* Markdown Content */}
       <div className="max-w-3xl mx-auto px-6 prose-mws">
-        {mdxContent}
+        <PostContent content={post.content} />
       </div>
 
       {/* Footer nav */}
