@@ -21,6 +21,9 @@ export function Footer() {
               <a href="#raves" className="hover:text-gold transition-colors">
                 Framework
               </a>
+              <Link href="/stoick" className="hover:text-gold transition-colors">
+                S.T.O.I.C.K.
+              </Link>
               <a href="#about" className="hover:text-gold transition-colors">
                 About
               </a>

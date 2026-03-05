@@ -9,6 +9,7 @@ export const SITE_CONFIG = {
 
 export const NAV_LINKS = [
   { label: "Framework", href: "#raves" },
+  { label: "S.T.O.I.C.K.", href: "/stoick" },
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
   { label: "Blog", href: "/blog" },
