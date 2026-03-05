@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export function Footer() {
@@ -54,6 +55,13 @@ export function Footer() {
         </div>
 
         <div className="mt-8 pt-8 border-t border-white/5 text-center text-cream/20 text-xs">
+          <Image
+            src="/mws-logo.png"
+            alt="Mental Wealth Solutions"
+            width={64}
+            height={64}
+            className="mx-auto mb-4 rounded-xl"
+          />
           <p>&copy; {year} Mental Wealth Solutions. All rights reserved.</p>
           <p className="mt-1">mentalwealthsolutions.org</p>
         </div>

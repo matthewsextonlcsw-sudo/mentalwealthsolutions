@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function Hero() {
   return (
     <section
@@ -17,8 +19,14 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-        {/* Gold accent line */}
-        <div className="w-16 h-0.5 bg-gold mx-auto mb-8 animate-fade-in" />
+        {/* Logo */}
+        <Image
+          src="/mws-logo.png"
+          alt="Mental Wealth Solutions"
+          width={120}
+          height={120}
+          className="mx-auto mb-8 rounded-2xl animate-fade-in"
+        />
 
         {/* Headline */}
         <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { NAV_LINKS } from "@/lib/constants";
 
@@ -24,9 +25,13 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
         <Link href="/" className="flex items-center gap-3">
-          <span className="text-gold font-heading text-xl font-bold tracking-wide">
-            MWS
-          </span>
+          <Image
+            src="/mws-logo.png"
+            alt="Mental Wealth Solutions"
+            width={40}
+            height={40}
+            className="rounded-lg"
+          />
           <span className="hidden sm:block text-cream/70 text-sm font-light">
             Mental Wealth Solutions
           </span>
