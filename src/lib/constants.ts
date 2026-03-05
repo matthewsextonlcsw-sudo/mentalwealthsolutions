@@ -9,10 +9,10 @@ export const SITE_CONFIG = {
 
 export const NAV_LINKS = [
   { label: "Framework", href: "#raves" },
-  { label: "S.T.O.I.C.K.", href: "/stoick" },
   { label: "About", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Blog", href: "/blog" },
   { label: "Vibe Check", href: "#vibecheck" },
   { label: "Contact", href: "#contact" },
+  { label: "S.T.O.I.C.K.", href: "/stoick" },
+  { label: "Blog", href: "/blog" },
 ] as const;
