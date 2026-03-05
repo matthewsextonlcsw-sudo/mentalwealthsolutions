@@ -40,13 +40,17 @@ export function Hero() {
         {/* CTA buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="#raves"
+            href="https://calendly.com/matthewsextonlcsw-mentalwealthsolutions/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-8 py-3.5 bg-gold text-navy font-semibold rounded-lg hover:bg-gold-400 transition-all hover:shadow-lg hover:shadow-gold/20"
           >
-            Explore the Framework
+            Book Free Consultation
           </a>
           <a
-            href="#vibecheck"
+            href="https://vibecheck.luxury"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-8 py-3.5 border border-gold/40 text-gold rounded-lg hover:bg-gold/10 transition-all"
           >
             Take the Vibe Check

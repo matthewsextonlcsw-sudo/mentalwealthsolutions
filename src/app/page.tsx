@@ -3,6 +3,7 @@ import { RavesFramework } from "@/components/sections/RavesFramework";
 import { About } from "@/components/sections/About";
 import { Services } from "@/components/sections/Services";
 import { VibeCheckBridge } from "@/components/sections/VibeCheckBridge";
+import { Contact } from "@/components/sections/Contact";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <About />
       <Services />
       <VibeCheckBridge />
+      <Contact />
     </>
   );
 }

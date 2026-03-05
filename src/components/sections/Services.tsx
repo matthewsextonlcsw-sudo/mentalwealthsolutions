@@ -95,6 +95,30 @@ export function Services() {
             </div>
           ))}
         </div>
+
+        <div className="text-center mt-12">
+          <a
+            href="https://calendly.com/matthewsextonlcsw-mentalwealthsolutions/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-navy font-semibold rounded-lg hover:bg-gold-400 transition-all hover:shadow-lg hover:shadow-gold/20"
+          >
+            Book Free Consultation
+            <svg
+              className="w-4 h-4"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M13 7l5 5m0 0l-5 5m5-5H6"
+              />
+            </svg>
+          </a>
+        </div>
       </div>
     </section>
   );

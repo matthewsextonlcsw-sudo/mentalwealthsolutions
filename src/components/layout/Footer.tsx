@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export function Footer() {
   const year = new Date().getFullYear();
 
@@ -14,23 +16,36 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-8 text-cream/30 text-sm">
-            <a href="#raves" className="hover:text-gold transition-colors">
-              Framework
-            </a>
-            <a href="#about" className="hover:text-gold transition-colors">
-              About
-            </a>
-            <a href="#services" className="hover:text-gold transition-colors">
-              Services
-            </a>
+          <div className="flex flex-col items-center gap-6">
+            <div className="flex flex-wrap justify-center gap-8 text-cream/30 text-sm">
+              <a href="#raves" className="hover:text-gold transition-colors">
+                Framework
+              </a>
+              <a href="#about" className="hover:text-gold transition-colors">
+                About
+              </a>
+              <a href="#services" className="hover:text-gold transition-colors">
+                Services
+              </a>
+              <Link href="/blog" className="hover:text-gold transition-colors">
+                Blog
+              </Link>
+              <a
+                href="https://vibecheck.luxury"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-gold transition-colors"
+              >
+                Vibe Check ↗
+              </a>
+            </div>
             <a
-              href="https://vibecheck.luxury"
+              href="https://calendly.com/matthewsextonlcsw-mentalwealthsolutions/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-gold transition-colors"
+              className="px-6 py-2.5 bg-gold text-navy font-semibold rounded-lg hover:bg-gold-400 transition-colors text-sm"
             >
-              Vibe Check ↗
+              Book Free Consultation
             </a>
           </div>
         </div>
