@@ -40,4 +40,55 @@
   .glass-card {
     @apply bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl;
   }
+
+  /* MDX prose styling */
+  .prose-mws h2 {
+    @apply font-heading text-2xl md:text-3xl font-bold text-cream mt-12 mb-4;
+  }
+  .prose-mws h3 {
+    @apply font-heading text-xl md:text-2xl font-semibold text-cream mt-10 mb-3;
+  }
+  .prose-mws p {
+    @apply text-cream/70 text-base md:text-lg leading-relaxed mb-6;
+  }
+  .prose-mws ul,
+  .prose-mws ol {
+    @apply text-cream/70 text-base md:text-lg leading-relaxed mb-6 ml-6;
+  }
+  .prose-mws ul {
+    @apply list-disc;
+  }
+  .prose-mws ol {
+    @apply list-decimal;
+  }
+  .prose-mws li {
+    @apply mb-2;
+  }
+  .prose-mws a {
+    @apply text-gold hover:text-gold-400 underline underline-offset-4 decoration-gold/30 transition-colors;
+  }
+  .prose-mws blockquote {
+    @apply border-l-4 border-gold/40 pl-6 my-8 italic text-cream/60;
+  }
+  .prose-mws strong {
+    @apply text-cream font-semibold;
+  }
+  .prose-mws em {
+    @apply text-cream/80;
+  }
+  .prose-mws hr {
+    @apply border-white/10 my-10;
+  }
+  .prose-mws code {
+    @apply bg-white/5 text-gold/90 px-1.5 py-0.5 rounded text-sm;
+  }
+  .prose-mws pre {
+    @apply bg-navy-950 border border-white/10 rounded-xl p-6 my-8 overflow-x-auto;
+  }
+  .prose-mws pre code {
+    @apply bg-transparent p-0;
+  }
+  .prose-mws img {
+    @apply rounded-xl my-8;
+  }
 }
