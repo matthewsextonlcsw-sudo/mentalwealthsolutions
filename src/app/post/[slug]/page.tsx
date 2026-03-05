@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { MDXRemote } from "next-mdx-remote/rsc";
+import { compileMDX } from "next-mdx-remote/rsc";
 import { getPostBySlug, getAllSlugs } from "@/lib/blog";
 import { GoldDivider } from "@/components/ui/GoldDivider";
 
@@ -30,9 +30,13 @@ export function generateMetadata({ params }: PostPageProps): Metadata {
   };
 }
 
-export default function PostPage({ params }: PostPageProps) {
+export default async function PostPage({ params }: PostPageProps) {
   const post = getPostBySlug(params.slug);
   if (!post) notFound();
+
+  const { content: mdxContent } = await compileMDX({
+    source: post.content,
+  });
 
   return (
     <article className="min-h-screen pt-28 pb-20">
@@ -101,7 +105,7 @@ export default function PostPage({ params }: PostPageProps) {
 
       {/* MDX Content */}
       <div className="max-w-3xl mx-auto px-6 prose-mws">
-        <MDXRemote source={post.content} />
+        {mdxContent}
       </div>
 
       {/* Footer nav */}
