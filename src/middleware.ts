@@ -1,5 +1,20 @@
-import { NextRequest, NextResponse } from 'next/server'
+import { NextRequest, NextResponse, NextFetchEvent } from 'next/server'
 import { get } from '@vercel/edge-config'
+
+const MISSION_CONTROL_URL = process.env.MISSION_CONTROL_URL ?? ''
+const MISSION_CONTROL_API_KEY = process.env.MISSION_CONTROL_API_KEY ?? ''
+
+function logHit(ip: string, path: string, blocked: boolean): Promise<void> {
+  if (!MISSION_CONTROL_URL || !MISSION_CONTROL_API_KEY) return Promise.resolve()
+  return fetch(`${MISSION_CONTROL_URL}/api/log-hit`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': MISSION_CONTROL_API_KEY,
+    },
+    body: JSON.stringify({ ip, path, blocked, ts: Date.now() }),
+  }).then(() => undefined).catch(() => undefined)
+}
 
 // ─── CIDR MATCHING UTILITIES ─────────────────────────────────────────────────
 function ipToInt(ip: string): number {
@@ -228,7 +243,7 @@ function isBlocked(ip: string): boolean {
 }
 
 // ─── MIDDLEWARE EXPORT ────────────────────────────────────────────────────────
-export async function middleware(req: NextRequest) {
+export async function middleware(req: NextRequest, evt: NextFetchEvent) {
   // Check Edge Config toggle — skip blocking if firewall is disabled
   try {
     const firewallEnabled = await get<boolean>('firewallEnabled')
@@ -243,7 +258,13 @@ export async function middleware(req: NextRequest) {
     req.headers.get('x-real-ip') ??
     '0.0.0.0'
 
-  if (isBlocked(ip)) {
+  const blocked = isBlocked(ip)
+  const path = req.nextUrl.pathname
+
+  // Log hit asynchronously — does not delay the response
+  evt.waitUntil(logHit(ip, path, blocked))
+
+  if (blocked) {
     return new NextResponse(null, { status: 403 })
   }
 
