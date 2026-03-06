@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
+import { get } from '@vercel/edge-config'
 
 // ─── CIDR MATCHING UTILITIES ─────────────────────────────────────────────────
 function ipToInt(ip: string): number {
@@ -227,7 +228,16 @@ function isBlocked(ip: string): boolean {
 }
 
 // ─── MIDDLEWARE EXPORT ────────────────────────────────────────────────────────
-export function middleware(req: NextRequest) {
+export async function middleware(req: NextRequest) {
+  // Check Edge Config toggle — skip blocking if firewall is disabled
+  try {
+    const firewallEnabled = await get<boolean>('firewallEnabled')
+    if (firewallEnabled === false) return NextResponse.next()
+  } catch {
+    // Edge Config unavailable — fail open (don't block)
+    return NextResponse.next()
+  }
+
   const ip =
     req.headers.get('x-forwarded-for')?.split(',')[0].trim() ??
     req.headers.get('x-real-ip') ??
