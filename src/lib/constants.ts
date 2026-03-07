@@ -8,11 +8,12 @@ export const SITE_CONFIG = {
 } as const;
 
 export const NAV_LINKS = [
-  { label: "Framework", href: "#raves" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Vibe Check", href: "#vibecheck" },
-  { label: "Contact", href: "#contact" },
+  { label: "Framework", href: "/#raves" },
+  { label: "About", href: "/#about" },
+  { label: "Services", href: "/#services" },
+  { label: "Contact", href: "/#contact" },
   { label: "S.T.O.I.C.K.", href: "/stoick" },
+  { label: "Vibe Check", href: "/#vibecheck" },
+  { label: "Transplant Check", href: "/transplant-check" },
   { label: "Blog", href: "/blog" },
 ] as const;

@@ -1,22 +1,26 @@
+import { CinematicSky } from "@/components/ui/CinematicSky";
+
 export function Hero() {
   return (
     <section
       id="hero"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background gradient */}
+      {/* Fallback background (canvas renders over this) */}
       <div className="absolute inset-0 bg-navy-gradient" />
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage:
-            "radial-gradient(circle at 1px 1px, rgba(201,168,76,0.3) 1px, transparent 0)",
-          backgroundSize: "40px 40px",
-        }}
-      />
+
+      {/* Cinematic sky — city horizon + stars + shooting star */}
+      <CinematicSky />
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+        {/* Credential badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-gold/30 bg-gold/10 text-gold text-xs uppercase tracking-[0.2em] mb-8">
+          <span>Matthew Sexton, LCSW</span>
+          <span className="w-px h-3 bg-gold/40" />
+          <span className="text-gold/70">Licensed Clinical Social Worker</span>
+        </div>
+
         {/* Gold accent line */}
         <div className="w-16 h-0.5 bg-gold mx-auto mb-8 animate-fade-in" />
 
@@ -57,7 +61,6 @@ export function Hero() {
           </a>
         </div>
       </div>
-
     </section>
   );
 }

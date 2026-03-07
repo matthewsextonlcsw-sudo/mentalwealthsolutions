@@ -25,6 +25,45 @@
   }
 }
 
+@keyframes starTwinkle {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.9; }
+}
+
+@keyframes starPulse {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.4); }
+}
+
+.star-sm {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background: #ffffff;
+  border-radius: 50%;
+  animation: starTwinkle var(--star-duration, 4s) ease-in-out var(--star-delay, 0s) infinite;
+}
+
+.star-md {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+  animation: starTwinkle var(--star-duration, 6s) ease-in-out var(--star-delay, 0s) infinite;
+}
+
+.star-lg {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.7), 0 0 12px rgba(200, 215, 255, 0.4);
+  animation: starPulse var(--star-duration, 5s) ease-in-out var(--star-delay, 0s) infinite;
+}
+
 @layer components {
   .gold-text-gradient {
     background: linear-gradient(90deg, #c9a84c, #e8d59e, #c9a84c);

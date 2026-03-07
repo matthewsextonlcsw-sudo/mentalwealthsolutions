@@ -117,6 +117,9 @@ const EX_IPV4 = new Set([
   '172.56.161.153',  // T-Mobile Queens
   // Added Mar 3 — Mechanicsville (Day 9, Edge Desktop, fixated on Intimacy post)
   '67.174.74.39',
+  // Added Mar 6 — bots/crawlers
+  '51.38.104.193', // OVH SAS Madrid — scanning for /ss.php, /cache.php
+  '40.77.167.19',  // Microsoft/Bingbot — Boydton VA datacenter
 ])
 
 // ─── EX — CIDR RANGES (IPv4) ─────────────────────────────────────────────────
