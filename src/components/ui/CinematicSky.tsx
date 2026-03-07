@@ -106,7 +106,7 @@ export function CinematicSky() {
     const H = () => canvas.offsetHeight;
 
     // Pre-generate stars
-    let stars: Star[] = makeStars(180, W(), H());
+    const stars: Star[] = makeStars(180, W(), H());
 
     // Shooting star state
     const shooter: Shooter = {
@@ -126,7 +126,7 @@ export function CinematicSky() {
     }
 
     // Launch first shooter after pan completes + 1s
-    let shooterTimeout = setTimeout(launchShooter, PAN_DURATION + 1000);
+    const shooterTimeout = setTimeout(launchShooter, PAN_DURATION + 1000);
     let shooterInterval: ReturnType<typeof setInterval>;
 
     function draw(ts: number) {
