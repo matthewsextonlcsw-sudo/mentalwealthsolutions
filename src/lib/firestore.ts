@@ -125,12 +125,8 @@ export async function getFirestorePosts(): Promise<FirestoreBlogPost[]> {
             value: { stringValue: "published" },
           },
         },
-        orderBy: [
-          {
-            field: { fieldPath: "publishedAt" },
-            direction: "DESCENDING",
-          },
-        ],
+        // No orderBy — avoids needing a composite index.
+        // Sorting is handled in blog.ts getAllPosts().
         limit: 100,
       },
     };
