@@ -5,16 +5,23 @@ import { getPostBySlug, getAllSlugs } from "@/lib/blog";
 import { GoldDivider } from "@/components/ui/GoldDivider";
 import { PostContent } from "./PostContent";
 
+export const revalidate = 300; // ISR: revalidate every 5 minutes
+export const dynamicParams = true; // Allow Firestore-only slugs not in generateStaticParams
+
 interface PostPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
-export function generateStaticParams() {
-  return getAllSlugs().map((slug) => ({ slug }));
+export async function generateStaticParams() {
+  const slugs = await getAllSlugs();
+  return slugs.map((slug) => ({ slug }));
 }
 
-export function generateMetadata({ params }: PostPageProps): Metadata {
-  const post = getPostBySlug(params.slug);
+export async function generateMetadata({
+  params,
+}: PostPageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
   if (!post) return { title: "Post Not Found" };
 
   return {
@@ -30,8 +37,9 @@ export function generateMetadata({ params }: PostPageProps): Metadata {
   };
 }
 
-export default function PostPage({ params }: PostPageProps) {
-  const post = getPostBySlug(params.slug);
+export default async function PostPage({ params }: PostPageProps) {
+  const { slug } = await params;
+  const post = await getPostBySlug(slug);
   if (!post) notFound();
 
   return (

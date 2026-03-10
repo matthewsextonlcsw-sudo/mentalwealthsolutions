@@ -3,14 +3,16 @@ import Link from "next/link";
 import { getAllPosts } from "@/lib/blog";
 import { GoldDivider } from "@/components/ui/GoldDivider";
 
+export const revalidate = 300; // ISR: revalidate every 5 minutes
+
 export const metadata: Metadata = {
   title: "Blog | Mental Wealth Solutions",
   description:
     "Insights on narcissistic abuse recovery, mental wealth building, and emotional resilience by Matthew Sexton, LCSW.",
 };
 
-export default function BlogIndex() {
-  const posts = getAllPosts();
+export default async function BlogIndex() {
+  const posts = await getAllPosts();
 
   return (
     <section className="min-h-screen pt-28 pb-20">
