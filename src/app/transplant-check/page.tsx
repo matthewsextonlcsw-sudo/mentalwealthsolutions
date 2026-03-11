@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Kidney Check — ESRD Patient Navigation | Mental Wealth Solutions",
+  title: "Transplant Check — ESRD Patient Navigation | Mental Wealth Solutions",
   description:
     "Waze for transplant patients. Transplant center intelligence, daily journaling, AI emotional support, and Vibe Guides — so ESRD patients stop waiting and start navigating.",
 };
@@ -27,7 +27,7 @@ export default function TransplantCheckPage() {
           </p>
           <div className="w-16 h-0.5 bg-gold mx-auto mb-8" />
           <h1 className="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-cream leading-tight mb-6">
-            Kidney Check
+            Transplant Check
           </h1>
           <p className="text-gold text-xl md:text-2xl font-light mb-6">
             Know your options. Navigate your journey.
@@ -39,7 +39,7 @@ export default function TransplantCheckPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="https://kidneycheck.app"
+              href="https://transplantcheck.org"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3.5 bg-gold text-navy font-semibold rounded-lg hover:bg-gold-400 transition-all hover:shadow-lg hover:shadow-gold/20"
@@ -74,7 +74,7 @@ export default function TransplantCheckPage() {
                 you&apos;re drowning in a process that nobody walks you through.
               </p>
               <p>
-                Kidney Check was built for you. Not by a tech company that
+                Transplant Check was built for you. Not by a tech company that
                 googled ESRD — but by someone who sat with these patients for
                 years, watched them go home without answers, and decided that
                 had to stop.
@@ -192,7 +192,7 @@ export default function TransplantCheckPage() {
                 appointments with more questions than answers.
               </p>
               <p>
-                Kidney Check is the tool he wishes those patients had. It
+                Transplant Check is the tool he wishes those patients had. It
                 combines clinical insight, SRTR data, and the S.T.O.I.C.K.
                 framework he developed — because navigating ESRD deserves more
                 than a pamphlet.
@@ -268,7 +268,7 @@ export default function TransplantCheckPage() {
       {/* Disclaimer */}
       <div className="px-6 pb-10 text-center">
         <p className="text-cream/30 text-xs max-w-2xl mx-auto leading-relaxed">
-          Kidney Check is a patient navigation tool. It is not a substitute for
+          Transplant Check is a patient navigation tool. It is not a substitute for
           medical advice, therapy, or your care team. Always talk to your doctor
           about your specific situation.
         </p>

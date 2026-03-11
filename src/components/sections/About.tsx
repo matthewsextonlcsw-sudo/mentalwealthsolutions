@@ -65,7 +65,7 @@ export function About() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-gold mt-0.5">&#x2014;</span>
-                  <span>ESRD &amp; Transplant Patient Navigation (Kidney Check)</span>
+                  <span>ESRD &amp; Transplant Patient Navigation (Transplant Check)</span>
                 </li>
               </ul>
             </div>
