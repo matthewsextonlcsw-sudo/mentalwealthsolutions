@@ -44,7 +44,7 @@ export default function TransplantCheckPage() {
               rel="noopener noreferrer"
               className="px-8 py-3.5 bg-gold text-navy font-semibold rounded-lg hover:bg-gold-400 transition-all hover:shadow-lg hover:shadow-gold/20"
             >
-              Start 7-Day Free Trial
+              Visit Transplant Check
             </a>
             <Link
               href="/#contact"
