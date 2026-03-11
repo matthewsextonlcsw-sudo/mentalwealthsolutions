@@ -246,7 +246,22 @@ function isBlocked(ip: string): boolean {
 }
 
 // ─── MIDDLEWARE EXPORT ────────────────────────────────────────────────────────
+// Ghost slugs — ISR-cached pages from old deploys that no longer exist in Firestore.
+// Middleware intercepts BEFORE ISR cache layer, guaranteeing a real 404.
+const GHOST_SLUGS = new Set([
+  'narcissistic-abuse-and-the-awakening-how-antagonistic-personality-traits-trap-empathic-people',
+])
+
 export async function middleware(req: NextRequest, evt: NextFetchEvent) {
+  // Kill ghost pages first — runs before everything else
+  const pathname = req.nextUrl.pathname
+  if (pathname.startsWith('/post/')) {
+    const slug = pathname.replace('/post/', '').replace(/\/$/, '')
+    if (GHOST_SLUGS.has(slug)) {
+      return new NextResponse('Not Found', { status: 404 })
+    }
+  }
+
   // Check Edge Config toggle — skip blocking if firewall is disabled
   try {
     const firewallEnabled = await get<boolean>('firewallEnabled')

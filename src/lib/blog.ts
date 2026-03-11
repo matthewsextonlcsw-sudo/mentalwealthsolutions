@@ -72,40 +72,18 @@ function adaptFirestorePost(fp: FirestoreBlogPost): BlogPost {
 
 // ---------- Public API (async — merges MDX + Firestore) ----------
 
+// Blog is temporarily down while articles are being updated.
+// Return empty results so the placeholder page shows instead.
+// To re-enable: remove the early returns below.
+
 export async function getAllPosts(): Promise<BlogPost[]> {
-  const mdxPosts = getMdxPosts();
-  const firestorePosts = await getFirestorePosts();
-
-  // Merge: MDX slugs take precedence (hand-written override)
-  const mdxSlugsSet = new Set(mdxPosts.map((p) => p.slug));
-  const uniqueFirestorePosts = firestorePosts
-    .filter((fp) => !mdxSlugsSet.has(fp.slug))
-    .map(adaptFirestorePost);
-
-  const merged = [...mdxPosts, ...uniqueFirestorePosts];
-
-  return merged.sort(
-    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-  );
+  return [];
 }
 
 export async function getPostBySlug(slug: string): Promise<BlogPost | null> {
-  // Check MDX first (hand-written takes priority)
-  const mdx = getMdxPostBySlug(slug);
-  if (mdx) return mdx;
-
-  // Fall back to Firestore
-  const fp = await getFirestorePostBySlug(slug);
-  if (fp) return adaptFirestorePost(fp);
-
   return null;
 }
 
 export async function getAllSlugs(): Promise<string[]> {
-  const mdxSlugs = getMdxSlugs();
-  const firestorePosts = await getFirestorePosts();
-  const firestoreSlugs = firestorePosts.map((p) => p.slug);
-
-  // Deduplicate
-  return Array.from(new Set(mdxSlugs.concat(firestoreSlugs)));
+  return [];
 }

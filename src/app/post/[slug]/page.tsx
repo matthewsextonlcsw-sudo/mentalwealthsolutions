@@ -6,7 +6,7 @@ import { GoldDivider } from "@/components/ui/GoldDivider";
 import { PostContent } from "./PostContent";
 
 export const revalidate = 300; // ISR: revalidate every 5 minutes
-export const dynamicParams = true; // Allow Firestore-only slugs not in generateStaticParams
+export const dynamicParams = false; // Only slugs from generateStaticParams are valid — kills ghost pages
 
 interface PostPageProps {
   params: Promise<{ slug: string }>;
