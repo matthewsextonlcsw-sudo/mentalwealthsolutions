@@ -31,9 +31,6 @@ export function Footer() {
               <a href="#services" className="hover:text-gold transition-colors">
                 Services
               </a>
-              <Link href="/blog" className="hover:text-gold transition-colors">
-                Blog
-              </Link>
               <a
                 href="https://vibecheck.luxury"
                 target="_blank"
