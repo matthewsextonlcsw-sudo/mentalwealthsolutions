@@ -96,7 +96,17 @@ export function Services() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-10 mb-4">
+          <p className="text-cream/40 text-sm">
+            Telehealth available across{" "}
+            <span className="text-cream/60 font-medium">New York</span>,{" "}
+            <span className="text-cream/60 font-medium">Florida</span>,{" "}
+            <span className="text-cream/60 font-medium">Maine</span>, and{" "}
+            <span className="text-cream/60 font-medium">Delaware</span>. In-person in Floral Park, NY.
+          </p>
+        </div>
+
+        <div className="text-center mt-4">
           <a
             href="https://calendly.com/matthewsextonlcsw-mentalwealthsolutions/30min"
             target="_blank"

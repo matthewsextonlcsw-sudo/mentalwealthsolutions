@@ -65,6 +65,16 @@ export function Contact() {
         <p className="text-cream/20 text-xs mt-6">
           Free 30-minute consultation &mdash; no obligation
         </p>
+
+        <div className="mt-10 pt-8 border-t border-gold/10 flex flex-col sm:flex-row items-center justify-center gap-6 text-cream/30 text-sm">
+          <a href="tel:9174329580" className="hover:text-gold transition-colors">
+            (917) 432-9580
+          </a>
+          <span className="hidden sm:block">·</span>
+          <span>66 Tulip Ave, Floral Park, NY 11001</span>
+          <span className="hidden sm:block">·</span>
+          <span>Licensed in <strong className="text-cream/50">NY · FL · ME · DE</strong></span>
+        </div>
       </div>
     </section>
   );
